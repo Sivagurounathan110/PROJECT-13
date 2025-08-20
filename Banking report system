@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int acc_no[100]; float balance [100]; int count = 0;
+
+void createAccount() {
+
+} printf("Enter account number: "); scanf("%d", &acc_no[count]); printf("Enter initial balance: "); scanf("%f", &balance [count]); count++; printf("Account created!\n");
+
+void deposit() {
+
+int num; float amt; printf("Enter account number: "); scanf("%d", &num); for (int i = 0; i < count; i++) { if (acc_no[i] == num) { printf("Enter amount to deposit: "); scanf("%f", &amt); balance[i] += amt; printf("Deposited successfully!\n"); return; }
+
+} } printf("Account not found.\n");
+
+void withdraw() {
+
+int num; float amt; printf("Enter account number: "); scanf("%d", &num); for (int i=0; i < count; i++) { if (acc_no[i] == num) { printf("Enter amount to withdraw: "); scanf("%f", &amt); if (amt > balance[i]) { printf("Insufficient balance.\n"); } else { balance[i] -= amt; printf("Withdrawal successful!\n"); } }
+
+return;
+
+} printf("Account not found.\n");
+
+}Void Checkbalance() {
+
+int num;
+
+printf("Enter account number: ");
+
+scanf("%d", &num);
+
+for (int i = 0; i < count; i++) {
+
+printf("Balance: %.2f\n", balance[i]);
+
+if (acc_no[i] == num) { return; } } }
+
+printf("Account not found.\n");
+
+int main() {
+
+int choice;
+
+while (1) { printf("\n1. Create Account\n2. Deposit\n3. Withdraw\n4. Check Balance\n5. Exit\n");
+
+printf("Enter your choice: ");
+
+scanf("%d", &choice);
+
+if (choice == 1) create Account();
+
+else if (choice == 2) deposit();
+
+else if (choice == 3) withdraw();
+
+else if (choice == 4) checkBalance();
+
+else if (choice == 5) break;
+
+else printf("Invalid choice\n"); } }
+
+return 0;
